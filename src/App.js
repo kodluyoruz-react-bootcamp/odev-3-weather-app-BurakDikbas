@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import SelectMenu from "./components/SelectMenu";
+import DisplayMenu from "./components/DisplayMenu";
+import "./App.css";
+import { DataProvider } from "./contexts/DataContext.js";
+import { Grid } from "@material-ui/core";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <DataProvider>
+        <Grid container>
+          <SelectMenu></SelectMenu>
+          <DisplayMenu></DisplayMenu>
+        </Grid>
+      </DataProvider>
     </div>
   );
 }
